@@ -13,7 +13,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_0xStYRD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_0xStYxD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_8kg8oBD_Ee-aot_1VWrtKg" name="operation Approval" outgoing="_xNtR6xD-Ee-aot_1VWrtKg _r_Pj0BK9Ee-b_qwhUK81tw" incoming="_HoepMBHYEe-o_eIHrcfjrQ" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_8kg8oBD_Ee-aot_1VWrtKg" name="operation Approval" outgoing="_r_Pj0BK9Ee-b_qwhUK81tw _wdgKoBapEe-SNcJhz0z2OQ" incoming="_HoepMBHYEe-o_eIHrcfjrQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_w631cRD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_w631cBD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_w631chD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
@@ -73,7 +73,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_8kiKyxD_Ee-aot_1VWrtKg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_8_3b4BD_Ee-aot_1VWrtKg" name="Branch Master" outgoing="_yWwkoxD-Ee-aot_1VWrtKg _iZVeexNKEe-3hLox5G8l9A" incoming="_xNtR6xD-Ee-aot_1VWrtKg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_8_3b4BD_Ee-aot_1VWrtKg" name="Branch Master" outgoing="_yWwkoxD-Ee-aot_1VWrtKg _iZVeexNKEe-3hLox5G8l9A" incoming="_wrpUUBapEe-SNcJhz0z2OQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_xNtR4RD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_xNtR4BD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_xNtR4hD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
@@ -206,7 +206,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_9UUB7BD_Ee-aot_1VWrtKg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_2SsEEBHBEe-o_eIHrcfjrQ" name="NSO Process" outgoing="_HoepMBHYEe-o_eIHrcfjrQ _P3PbUBKREe-b_qwhUK81tw" incoming="_1g1wYBHBEe-o_eIHrcfjrQ" actor="_QLOdgBEAEe-aot_1VWrtKg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_2SsEEBHBEe-o_eIHrcfjrQ" name="NSO Process" outgoing="_HoepMBHYEe-o_eIHrcfjrQ _P3PbUBKREe-b_qwhUK81tw" incoming="_1g1wYBHBEe-o_eIHrcfjrQ _x_lBYBapEe-SNcJhz0z2OQ" actor="_QLOdgBEAEe-aot_1VWrtKg" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_1gz7MRHBEe-o_eIHrcfjrQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_1gz7MBHBEe-o_eIHrcfjrQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_1gz7MhHBEe-o_eIHrcfjrQ" name="" content="" returnTypeFixed="true"/>
@@ -534,12 +534,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_NuZbhRK9Ee-b_qwhUK81tw" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_NuZbhhK9Ee-b_qwhUK81tw" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_NuZbhxK9Ee-b_qwhUK81tw" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'NSO Process')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_NuZbiBK9Ee-b_qwhUK81tw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_NuZbiRK9Ee-b_qwhUK81tw" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_NuZbihK9Ee-b_qwhUK81tw" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_NuZbixK9Ee-b_qwhUK81tw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_NuZbjBK9Ee-b_qwhUK81tw" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_NuZbhxK9Ee-b_qwhUK81tw" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'NSO Process')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'Nsoprocessform')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_tbnuoBjFEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_tbnuoRjFEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_tbnuohjFEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_tbnuoxjFEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_tbnupBjFEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_NuZbjRK9Ee-b_qwhUK81tw" key="username">
@@ -585,12 +585,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_xAggBRNGEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xAggBhNGEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_xAggBxNGEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'operation Approval')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_xAggCBNGEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_xAggCRNGEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_xAggChNGEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_xAggCxNGEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_xAggDBNGEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_xAggBxNGEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'operation Approval')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'OperationalApproval')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_5cA-YBjFEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_5cA-YRjFEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_5cA-YhjFEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_5cA-YxjFEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_5cA-ZBjFEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xAggDRNGEe-3hLox5G8l9A" key="username">
@@ -674,12 +674,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_ZQmUJRNREe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_ZQmUJhNREe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_ZQmUJxNREe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Branch Master')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZQmUKBNREe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZQmUKRNREe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZQmUKhNREe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZQmUKxNREe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZQmULBNREe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_ZQmUJxNREe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Branch Master')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'BranchDetails')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_GiZl0BjGEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_GiZl0RjGEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_GiZl0hjGEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_GiZl0xjGEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GiZl1BjGEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_ZQmULRNREe-3hLox5G8l9A" key="username">
@@ -822,12 +822,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_ghEbpRNSEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_ghEbphNSEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_ghEbpxNSEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Project Layout')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ghEbqBNSEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ghEbqRNSEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ghEbqhNSEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ghEbqxNSEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ghEbrBNSEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_ghEbpxNSEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Project Layout')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'ProjectLayout')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZH2eABjGEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZH2eARjGEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZH3FEBjGEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_ZH3FERjGEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZH3FEhjGEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_ghEbrRNSEe-3hLox5G8l9A" key="username">
@@ -929,9 +929,14 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_l8DsZxNMEe-3hLox5G8l9A" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_l8DsZhNMEe-3hLox5G8l9A" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:XORGateway" xmi:id="_xQREUBapEe-SNcJhz0z2OQ" name="Approval" outgoing="_wrpUUBapEe-SNcJhz0z2OQ _x_lBYBapEe-SNcJhz0z2OQ" incoming="_wdgKoBapEe-SNcJhz0z2OQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wdSvQRapEe-SNcJhz0z2OQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wdSvQBapEe-SNcJhz0z2OQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wdSvQhapEe-SNcJhz0z2OQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_y33GkBD-Ee-aot_1VWrtKg" name="po planning" actor="_QOOuMBEAEe-aot_1VWrtKg">
-        <elements xmi:type="process:Task" xmi:id="_7I6WwBD-Ee-aot_1VWrtKg" name="PO Planning" outgoing="_SiBmsBEJEe-aot_1VWrtKg _mu-58BNTEe-3hLox5G8l9A" incoming="_4JKBEBD-Ee-aot_1VWrtKg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_7I6WwBD-Ee-aot_1VWrtKg" name="PO Planning" outgoing="_SiBmsBEJEe-aot_1VWrtKg _mu-58BNTEe-3hLox5G8l9A" incoming="_4JKBEBD-Ee-aot_1VWrtKg __vE3QBapEe-SNcJhz0z2OQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_4JJaAhD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_4JJaARD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_4JJaAxD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
@@ -1007,7 +1012,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_7I6WzBD-Ee-aot_1VWrtKg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="__ZOVYBD-Ee-aot_1VWrtKg" name="Reference Category Contribution" outgoing="__tVkMBD-Ee-aot_1VWrtKg _c50rUBNWEe-3hLox5G8l9A" incoming="_Svez4BEJEe-aot_1VWrtKg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="__ZOVYBD-Ee-aot_1VWrtKg" name="Reference Category Contribution" outgoing="__tVkMBD-Ee-aot_1VWrtKg _c50rUBNWEe-3hLox5G8l9A" incoming="_-y3tsBapEe-SNcJhz0z2OQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_-cdLIBD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_-cckEBD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_-cdLIRD-Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
@@ -1107,7 +1112,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="___C_TBD-Ee-aot_1VWrtKg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndEvent" xmi:id="_EQ09gBD_Ee-aot_1VWrtKg" name="End1" incoming="_EQ1klxD_Ee-aot_1VWrtKg">
+        <elements xmi:type="process:EndEvent" xmi:id="_EQ09gBD_Ee-aot_1VWrtKg" name="PO END" incoming="_EQ1klxD_Ee-aot_1VWrtKg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_EQ1kkRD_Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_EQ1kkBD_Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_EQ1kkhD_Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
@@ -1180,69 +1185,6 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_Fa91axD_Ee-aot_1VWrtKg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_TGSKUBEJEe-aot_1VWrtKg" name="CMApproval " outgoing="_Svez4BEJEe-aot_1VWrtKg _4L7R8BNTEe-3hLox5G8l9A" incoming="_SiBmsBEJEe-aot_1VWrtKg" overrideActorsOfTheLane="false">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_Sh_xgREJEe-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_Sh_xgBEJEe-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_Sh_xghEJEe-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_X2LA6BEJEe-aot_1VWrtKg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_X2LA6REJEe-aot_1VWrtKg" name="cmApproval" content="cmApproval" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.CmApprovalForm">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_X2LA6hEJEe-aot_1VWrtKg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_X2LA6xEJEe-aot_1VWrtKg" name="cmApprovalInput.poplanning" content="//Retrieve aggregated PoPlanningForm using its DAO and persistenceId&#xD;&#xA;def poPlanningFormVar = poPlanningFormDAO.findByPersistenceId(cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null)&#xD;&#xA;if (!poPlanningFormVar) {&#xD;&#xA;&#x9;if (cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `PoPlanningForm` with the persistence id &quot; + cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return null&#xD;&#xA;}&#xD;&#xA;poPlanningFormVar.assignTo = cmApprovalInput?.poplanning?.assignTo&#xD;&#xA;poPlanningFormVar.addRefStore = cmApprovalInput?.poplanning?.addRefStore&#xD;&#xA;poPlanningFormVar.addPriorityStoreName = cmApprovalInput?.poplanning?.addPriorityStoreName&#xD;&#xA;return poPlanningFormVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.proflaut.nso.model.PoPlanningForm">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_X2LA7BEJEe-aot_1VWrtKg" name="cmApprovalInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_X2LA7REJEe-aot_1VWrtKg" name="poPlanningFormDAO" content="poPlanningFormDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.proflaut.nso.model.PoPlanningFormDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_X2LA7hEJEe-aot_1VWrtKg" type="JAVA_METHOD" expression="setPoplanning">
-              <inputTypes>com.proflaut.nso.model.PoPlanningForm</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_X2LA7xEJEe-aot_1VWrtKg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_X2LA8BEJEe-aot_1VWrtKg" name="cmApproval" content="cmApproval" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.CmApprovalForm">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_X2LA8REJEe-aot_1VWrtKg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_X2LA8hEJEe-aot_1VWrtKg" name="cmApprovalInput.approval" content="cmApprovalInput?.approval" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_X2LA8xEJEe-aot_1VWrtKg" name="cmApprovalInput" type="COMPLEX" createMode="false"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_X2LA9BEJEe-aot_1VWrtKg" type="JAVA_METHOD" expression="setApproval">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_NwcKABNZEe-3hLox5G8l9A">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_NwcKARNZEe-3hLox5G8l9A" name="nsoProcess" content="nsoProcess" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.Nsoprocessform">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_O-BXcBNZEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_NwcKAhNZEe-3hLox5G8l9A" name="newScript()" content="def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;return activityName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="expression:Expression" xmi:id="_RNe4oBNZEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_RNe4oRNZEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_NwcKAxNZEe-3hLox5G8l9A" type="JAVA_METHOD" expression="setPanAttachment">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <loopCondition xmi:type="expression:Expression" xmi:id="_Sh_xgxEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <loopMaximum xmi:type="expression:Expression" xmi:id="_Sh_xhBEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
-          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_Sh_xhREJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
-          <iteratorExpression xmi:type="expression:Expression" xmi:id="_Sh_xhxEJEe-aot_1VWrtKg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
-          <completionCondition xmi:type="expression:Expression" xmi:id="_Sh_xhhEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_TGSxaREJEe-aot_1VWrtKg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_YmJFQBEJEe-aot_1VWrtKg" name="cmApprovalNewForm" content="33b05cfa-267a-476b-864f-86081960133a" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
-          </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_TGSxaBEJEe-aot_1VWrtKg">
-            <inputs xmi:type="process:ContractInput" xmi:id="_X2LA4BEJEe-aot_1VWrtKg" name="cmApprovalInput" type="COMPLEX" dataReference="cmApproval" createMode="false">
-              <inputs xmi:type="process:ContractInput" xmi:id="_X2LA4REJEe-aot_1VWrtKg" name="poplanning" type="COMPLEX" createMode="false">
-                <inputs xmi:type="process:ContractInput" xmi:id="_X2LA4hEJEe-aot_1VWrtKg" name="persistenceId_string" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_X2LA4xEJEe-aot_1VWrtKg" name="assignTo" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_X2LA5BEJEe-aot_1VWrtKg" name="addRefStore" createMode="false"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_X2LA5REJEe-aot_1VWrtKg" name="addPriorityStoreName" createMode="false"/>
-              </inputs>
-              <inputs xmi:type="process:ContractInput" xmi:id="_X2LA5hEJEe-aot_1VWrtKg" name="approval" createMode="false"/>
-            </inputs>
-            <constraints xmi:type="process:ContractConstraint" xmi:id="_X2LA5xEJEe-aot_1VWrtKg" expression="!cmApprovalInput?.poplanning || cmApprovalInput?.poplanning?.persistenceId_string" errorMessage="PoPlanningForm must reference an existing instance with a persistenceId for CmApprovalForm" name="aggregation_cmApprovalInput_poplanning">
-              <inputNames>cmApprovalInput</inputNames>
-            </constraints>
-          </contract>
-          <expectedDuration xmi:type="expression:Expression" xmi:id="_TGSxaxEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
-        </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_mu9EwBNTEe-3hLox5G8l9A" name="store po planning" incoming="_mu-58BNTEe-3hLox5G8l9A">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_mu9r0RNTEe-3hLox5G8l9A" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_mu9r0BNTEe-3hLox5G8l9A" name="" content="" returnTypeFixed="true"/>
@@ -1256,12 +1198,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_zQYlBRNTEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_zQYlBhNTEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_zQYlBxNTEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Po Planning')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_zQYlCBNTEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_zQYlCRNTEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_zQYlChNTEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_zQYlCxNTEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zQYlDBNTEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_zQYlBxNTEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Po Planning')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'PoPlanningForm')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_rnXtUBjGEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_rnXtURjGEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_rnXtUhjGEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_rnXtUxjGEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rnXtVBjGEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_zQYlDRNTEe-3hLox5G8l9A" key="username">
@@ -1404,12 +1346,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_WqwL5RNUEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_WqwL5hNUEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_WqwL5xNUEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'CMApproval')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dDJNIBNbEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_dDJNIRNbEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_dDJNIhNbEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_dDJNIxNbEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_dDJNJBNbEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                <expression xmi:type="expression:Expression" xmi:id="_WqwL5xNUEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'CMApproval')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot; VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'CmApprovalForm')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_53QTcBjGEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_53QTcRjGEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_53QTchjGEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_53QTcxjGEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_53QTdBjGEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_WqwL7RNUEe-3hLox5G8l9A" key="username">
@@ -1446,11 +1388,11 @@
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_01KVBhNUEe-3hLox5G8l9A" key="script">
                 <expression xmi:type="expression:Expression" xmi:id="_01KVBxNUEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'NSO Process')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;return &quot;INSERT INTO cm_approval(\&quot;approval\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + cmApproval.getApproval() + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_01KVCBNUEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_01KVCRNUEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_01KVChNUEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_01KVCxNUEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_01KVDBNUEe-3hLox5G8l9A" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Zq8zABghEe-uwb7Z4_PPTg" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Zq8zARghEe-uwb7Z4_PPTg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Zq9aEBghEe-uwb7Z4_PPTg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Zq9aERghEe-uwb7Z4_PPTg" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Zq9aEhghEe-uwb7Z4_PPTg" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_01KVDRNUEe-3hLox5G8l9A" key="username">
@@ -1524,12 +1466,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_LUclhRNVEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_LUclhhNVEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_LUclhxNVEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Pharma and Surgical Reference PO')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_LUcliBNVEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_LUcliRNVEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_LUclihNVEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_LUclixNVEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_LUcljBNVEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_LUclhxNVEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Pharma and Surgical Reference PO')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'SupplierList')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_egWXQBjHEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_egWXQRjHEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_egWXQhjHEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_egWXQxjHEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_egWXRBjHEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_LUcljRNVEe-3hLox5G8l9A" key="username">
@@ -1672,12 +1614,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_qmM7xRNWEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_qmM7xhNWEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_qmM7xxNWEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Reference Category Contribution')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_qmM7yBNWEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_qmM7yRNWEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_qmM7yhNWEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_qmM7yxNWEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_qmM7zBNWEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_qmM7xxNWEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Reference Category Contribution')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'ReferenceCategory')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Fgj44BjHEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Fgj44RjHEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Fgj44hjHEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_Fgj44xjHEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Fgj45BjHEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_qmM7zRNWEe-3hLox5G8l9A" key="username">
@@ -1751,12 +1693,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_MnugZRNXEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_MnugZhNXEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_MnugZxNXEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'category Wise final PO')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_MnugaBNXEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_MnugaRNXEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_MnugahNXEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_MnugaxNXEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_MnugbBNXEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_MnugZxNXEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Category Wise final PO')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'CategoryWiseFinalPo')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_sJ0doBjHEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_sJ0doRjHEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_sJ0dohjHEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_sJ0doxjHEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_sJ0dpBjHEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_MnugbRNXEe-3hLox5G8l9A" key="username">
@@ -1817,9 +1759,97 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_sftbFhNWEe-3hLox5G8l9A" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_sftbFRNWEe-3hLox5G8l9A" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:XORGateway" xmi:id="__NU1EBapEe-SNcJhz0z2OQ" name="Gateway3" outgoing="_-y3tsBapEe-SNcJhz0z2OQ __vE3QBapEe-SNcJhz0z2OQ" incoming="_-atsYBapEe-SNcJhz0z2OQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_88Cu8RapEe-SNcJhz0z2OQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_88Cu8BapEe-SNcJhz0z2OQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_88Cu8hapEe-SNcJhz0z2OQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:Task" xmi:id="__SKr8BghEe-uwb7Z4_PPTg" name="CMApproval " outgoing="_4L7R8BNTEe-3hLox5G8l9A _-atsYBapEe-SNcJhz0z2OQ" incoming="_SiBmsBEJEe-aot_1VWrtKg" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_Sh_xgREJEe-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_Sh_xgBEJEe-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_Sh_xghEJEe-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_X2LA6BEJEe-aot_1VWrtKg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_X2LA6REJEe-aot_1VWrtKg" name="cmApproval" content="cmApproval" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.CmApprovalForm">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_X2LA6hEJEe-aot_1VWrtKg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_X2LA6xEJEe-aot_1VWrtKg" name="cmApprovalInput.poplanning" content="//Retrieve aggregated PoPlanningForm using its DAO and persistenceId&#xD;&#xA;def poPlanningFormVar = poPlanningFormDAO.findByPersistenceId(cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null)&#xD;&#xA;if (!poPlanningFormVar) {&#xD;&#xA;&#x9;if (cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `PoPlanningForm` with the persistence id &quot; + cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return null&#xD;&#xA;}&#xD;&#xA;poPlanningFormVar.assignTo = cmApprovalInput?.poplanning?.assignTo&#xD;&#xA;poPlanningFormVar.addRefStore = cmApprovalInput?.poplanning?.addRefStore&#xD;&#xA;poPlanningFormVar.addPriorityStoreName = cmApprovalInput?.poplanning?.addPriorityStoreName&#xD;&#xA;return poPlanningFormVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.proflaut.nso.model.PoPlanningForm">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_X2LA7BEJEe-aot_1VWrtKg" name="cmApprovalInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_X2LA7REJEe-aot_1VWrtKg" name="poPlanningFormDAO" content="poPlanningFormDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.proflaut.nso.model.PoPlanningFormDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_X2LA7hEJEe-aot_1VWrtKg" type="JAVA_METHOD" expression="setPoplanning">
+              <inputTypes>com.proflaut.nso.model.PoPlanningForm</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_X2LA7xEJEe-aot_1VWrtKg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_X2LA8BEJEe-aot_1VWrtKg" name="cmApproval" content="cmApproval" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.CmApprovalForm">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_X2LA8REJEe-aot_1VWrtKg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_X2LA8hEJEe-aot_1VWrtKg" name="cmApprovalInput.approval" content="cmApprovalInput?.approval" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_X2LA8xEJEe-aot_1VWrtKg" name="cmApprovalInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_X2LA9BEJEe-aot_1VWrtKg" type="JAVA_METHOD" expression="setApproval">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_NwcKABNZEe-3hLox5G8l9A">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_NwcKARNZEe-3hLox5G8l9A" name="nsoProcess" content="nsoProcess" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.Nsoprocessform">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_O-BXcBNZEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_NwcKAhNZEe-3hLox5G8l9A" name="newScript()" content="def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;return activityName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="expression:Expression" xmi:id="_egQYQBglEe-uwb7Z4_PPTg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_egQYQRglEe-uwb7Z4_PPTg" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_NwcKAxNZEe-3hLox5G8l9A" type="JAVA_METHOD" expression="setPanAttachment">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_D-jikRgiEe-uwb7Z4_PPTg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_D-jikhgiEe-uwb7Z4_PPTg" name="cmApproval" content="cmApproval" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.CmApprovalForm">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_D-jikxgiEe-uwb7Z4_PPTg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_D-jilBgiEe-uwb7Z4_PPTg" name="cmApprovalInput.poplanning" content="//Retrieve aggregated PoPlanningForm using its DAO and persistenceId&#xD;&#xA;def poPlanningFormVar = poPlanningFormDAO.findByPersistenceId(cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null)&#xD;&#xA;if (!poPlanningFormVar) {&#xD;&#xA;&#x9;if (cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null) {&#xD;&#xA;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `PoPlanningForm` with the persistence id &quot; + cmApprovalInput?.poplanning?.persistenceId_string?.trim() ? cmApprovalInput.poplanning.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return null&#xD;&#xA;}&#xD;&#xA;return poPlanningFormVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.proflaut.nso.model.PoPlanningForm">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_D-jilRgiEe-uwb7Z4_PPTg" name="cmApprovalInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_D-jilhgiEe-uwb7Z4_PPTg" name="poPlanningFormDAO" content="poPlanningFormDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.proflaut.nso.model.PoPlanningFormDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_D-jilxgiEe-uwb7Z4_PPTg" type="JAVA_METHOD" expression="setPoplanning">
+              <inputTypes>com.proflaut.nso.model.PoPlanningForm</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_D-jimBgiEe-uwb7Z4_PPTg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_D-jimRgiEe-uwb7Z4_PPTg" name="cmApproval" content="cmApproval" type="TYPE_VARIABLE" returnType="com.proflaut.nso.model.CmApprovalForm">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_D-jimhgiEe-uwb7Z4_PPTg" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_D-jimxgiEe-uwb7Z4_PPTg" name="cmApprovalInput.approval" content="cmApprovalInput?.approval" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_D-jinBgiEe-uwb7Z4_PPTg" name="cmApprovalInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_D-jinRgiEe-uwb7Z4_PPTg" type="JAVA_METHOD" expression="setApproval">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_Sh_xgxEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_Sh_xhBEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_Sh_xhREJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_Sh_xhxEJEe-aot_1VWrtKg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_Sh_xhhEJEe-aot_1VWrtKg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="__SL6GRghEe-uwb7Z4_PPTg">
+            <targetForm xmi:type="expression:Expression" xmi:id="__SL6GhghEe-uwb7Z4_PPTg" name="cmApprovalFormNewV1" content="bc57f0c2-3af4-41ac-8b39-3083ff2b054e" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          </formMapping>
+          <contract xmi:type="process:Contract" xmi:id="__SL6GBghEe-uwb7Z4_PPTg">
+            <inputs xmi:type="process:ContractInput" xmi:id="_D-i7gBgiEe-uwb7Z4_PPTg" name="cmApprovalInput" type="COMPLEX" dataReference="cmApproval" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_D-i7gRgiEe-uwb7Z4_PPTg" name="poplanning" type="COMPLEX" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_D-i7ghgiEe-uwb7Z4_PPTg" name="persistenceId_string" createMode="false"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_D-i7gxgiEe-uwb7Z4_PPTg" name="approval" createMode="false"/>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_D-jikBgiEe-uwb7Z4_PPTg" expression="!cmApprovalInput?.poplanning || cmApprovalInput?.poplanning?.persistenceId_string" errorMessage="PoPlanningForm must reference an existing instance with a persistenceId for CmApprovalForm" name="aggregation_cmApprovalInput_poplanning">
+              <inputNames>cmApprovalInput</inputNames>
+            </constraints>
+          </contract>
+          <expectedDuration xmi:type="expression:Expression" xmi:id="__SL6GxghEe-uwb7Z4_PPTg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_zWbR4BD-Ee-aot_1VWrtKg" name="db creation" actor="_YmTMYBEAEe-aot_1VWrtKg">
-        <elements xmi:type="process:EndEvent" xmi:id="_tl3zEBD_Ee-aot_1VWrtKg" name="End2" incoming="_tl4aIBD_Ee-aot_1VWrtKg">
+        <elements xmi:type="process:EndEvent" xmi:id="_tl3zEBD_Ee-aot_1VWrtKg" name="DB END" incoming="_tl4aIBD_Ee-aot_1VWrtKg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_tl3zEhD_Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_tl3zERD_Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_tl3zExD_Ee-aot_1VWrtKg" name="" content="" returnTypeFixed="true"/>
@@ -2033,12 +2063,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_-E0GBRNVEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_-E0GBhNVEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_-E0GBxNVEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Start Form')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_-E0GCBNVEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_-E0GCRNVEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_-E0GChNVEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_-E0GCxNVEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_-E0GDBNVEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_-E0GBxNVEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Start Form')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'StartForm')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_DHQpwBjIEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_DHQpwRjIEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_DHQpwhjIEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_DHQpwxjIEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_DHQpxBjIEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_-E0GDRNVEe-3hLox5G8l9A" key="username">
@@ -2181,12 +2211,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_ds-xJRNXEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_ds-xJhNXEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_ds-xJxNXEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Create Terminal Master')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ds-xKBNXEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ds-xKRNXEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ds-xKhNXEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_ds-xKxNXEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ds-xLBNXEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_ds-xJxNXEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Create Terminal Master')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'CreateTerminalMaster')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_dEEUkBjJEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_dEEUkRjJEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_dEEUkhjJEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_dEEUkxjJEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dEEUlBjJEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_ds-xLRNXEe-3hLox5G8l9A" key="username">
@@ -2329,12 +2359,12 @@
                 <expression xmi:type="expression:Expression" xmi:id="_f3gShRNYEe-3hLox5G8l9A" name="jdbc:postgresql://localhost:5432/BONITABPM" content="jdbc:postgresql://localhost:5432/BONITABPM" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_f3gShhNYEe-3hLox5G8l9A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_f3gShxNYEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Create Database')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fJQIkBNcEe-3hLox5G8l9A" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fJQIkRNcEe-3hLox5G8l9A" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fJQIkhNcEe-3hLox5G8l9A" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_fJQIkxNcEe-3hLox5G8l9A" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_fJQIlBNcEe-3hLox5G8l9A" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
+                <expression xmi:type="expression:Expression" xmi:id="_f3gShxNYEe-3hLox5G8l9A" name="script()" content="import org.bonitasoft.engine.bpm.flownode.ActivityStates&#xD;&#xA;import org.bonitasoft.engine.bpm.flownode.ArchivedHumanTaskInstanceSearchDescriptor&#xD;&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;def result = apiAccessor.getProcessAPI().searchArchivedHumanTasks(new SearchOptionsBuilder(0, 1)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.ROOT_PROCESS_INSTANCE_ID, rootProcessInstanceId)&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.NAME,  'Create Database')&#xD;&#xA;&#x9;&#x9;.filter(ArchivedHumanTaskInstanceSearchDescriptor.STATE_NAME, ActivityStates.COMPLETED_STATE)&#xD;&#xA;&#x9;&#x9;.done()).result&#xD;&#xA;def userId = result[0].executedBy&#xD;&#xA;def user = apiAccessor.getIdentityAPI().getUser(userId)&#xD;&#xA;def activityName=apiAccessor.processAPI.getActivityInstance(activityInstanceId).getName()&#xD;&#xA;def activityName1=apiAccessor.processAPI.getActivityInstance(activityInstanceId).name&#xD;&#xA;//return &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;) VALUES ('&quot; + nsoProcess.getPanAttachment() + &quot;', '&quot; + user.getUserName() + &quot;', '&quot; + 'Normal' + &quot;', '&quot; + processInstanceId.intValue() + &quot;');&quot;;&#xD;&#xA;def query = &quot;INSERT INTO prof_activity_nsopogen(\&quot;activity_name\&quot;, \&quot;processed_by\&quot;, \&quot;task_periority\&quot;, \&quot;case_id\&quot;, \&quot;form_field_name\&quot;) &quot; +&#xD;&#xA;&quot;VALUES ('${nsoProcess.getPanAttachment()}', '${user.getUserName()}', 'Normal', '${processInstanceId}', 'CreateDatabaseForm')&quot;&#xD;&#xA;&#xD;&#xA;return query" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_oTpycBjJEe-7Xcs21csUCA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_oTpycRjJEe-7Xcs21csUCA" name="activityInstanceId" content="activityInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_oTpychjJEe-7Xcs21csUCA" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_oTpycxjJEe-7Xcs21csUCA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_oTqZgBjJEe-7Xcs21csUCA" name="nsoProcess" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.Nsoprocessform"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_f3gSjRNYEe-3hLox5G8l9A" key="username">
@@ -2506,10 +2536,6 @@
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_wFklNhD-Ee-aot_1VWrtKg">
         <targetForm xmi:type="expression:Expression" xmi:id="_wFklNxD-Ee-aot_1VWrtKg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_xNtR6xD-Ee-aot_1VWrtKg" target="_8_3b4BD_Ee-aot_1VWrtKg" source="_8kg8oBD_Ee-aot_1VWrtKg">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_xNtR7BD-Ee-aot_1VWrtKg"/>
-        <condition xmi:type="expression:Expression" xmi:id="_xNtR7RD-Ee-aot_1VWrtKg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_yWwkoxD-Ee-aot_1VWrtKg" target="_9UUB4BD_Ee-aot_1VWrtKg" source="_8_3b4BD_Ee-aot_1VWrtKg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_yWwkpBD-Ee-aot_1VWrtKg"/>
         <condition xmi:type="expression:Expression" xmi:id="_yWwkpRD-Ee-aot_1VWrtKg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -2550,13 +2576,9 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_tl4aIRD_Ee-aot_1VWrtKg"/>
         <condition xmi:type="expression:Expression" xmi:id="_tl4aIhD_Ee-aot_1VWrtKg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_SiBmsBEJEe-aot_1VWrtKg" target="_TGSKUBEJEe-aot_1VWrtKg" source="_7I6WwBD-Ee-aot_1VWrtKg">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_SiBmsBEJEe-aot_1VWrtKg" target="__SKr8BghEe-uwb7Z4_PPTg" source="_7I6WwBD-Ee-aot_1VWrtKg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_SiCNwBEJEe-aot_1VWrtKg"/>
         <condition xmi:type="expression:Expression" xmi:id="_SiCNwREJEe-aot_1VWrtKg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_Svez4BEJEe-aot_1VWrtKg" target="__ZOVYBD-Ee-aot_1VWrtKg" source="_TGSKUBEJEe-aot_1VWrtKg">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Svez4REJEe-aot_1VWrtKg"/>
-        <condition xmi:type="expression:Expression" xmi:id="_Svez4hEJEe-aot_1VWrtKg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_1g1wYBHBEe-o_eIHrcfjrQ" target="_2SsEEBHBEe-o_eIHrcfjrQ" source="_wFklIxD-Ee-aot_1VWrtKg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_1g1wYRHBEe-o_eIHrcfjrQ"/>
@@ -2586,7 +2608,7 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_mu_hABNTEe-3hLox5G8l9A"/>
         <condition xmi:type="expression:Expression" xmi:id="_mu_hARNTEe-3hLox5G8l9A" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_4L7R8BNTEe-3hLox5G8l9A" target="_4L41sBNTEe-3hLox5G8l9A" source="_TGSKUBEJEe-aot_1VWrtKg">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_4L7R8BNTEe-3hLox5G8l9A" target="_4L41sBNTEe-3hLox5G8l9A" source="__SKr8BghEe-uwb7Z4_PPTg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_4L7R8RNTEe-3hLox5G8l9A"/>
         <condition xmi:type="expression:Expression" xmi:id="_4L7R8hNTEe-3hLox5G8l9A" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
@@ -2613,6 +2635,34 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_sfuCIRNWEe-3hLox5G8l9A" target="_sfrl4BNWEe-3hLox5G8l9A" source="_Fa9OUBD_Ee-aot_1VWrtKg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_sfupMBNWEe-3hLox5G8l9A"/>
         <condition xmi:type="expression:Expression" xmi:id="_sfupMRNWEe-3hLox5G8l9A" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wdgKoBapEe-SNcJhz0z2OQ" target="_xQREUBapEe-SNcJhz0z2OQ" source="_8kg8oBD_Ee-aot_1VWrtKg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wdhYwBapEe-SNcJhz0z2OQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wdhYwRapEe-SNcJhz0z2OQ" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wrpUUBapEe-SNcJhz0z2OQ" target="_8_3b4BD_Ee-aot_1VWrtKg" source="_xQREUBapEe-SNcJhz0z2OQ" isDefault="true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wrpUURapEe-SNcJhz0z2OQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wrpUUhapEe-SNcJhz0z2OQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_x_lBYBapEe-SNcJhz0z2OQ" target="_2SsEEBHBEe-o_eIHrcfjrQ" source="_xQREUBapEe-SNcJhz0z2OQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_x_locBapEe-SNcJhz0z2OQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_x_locRapEe-SNcJhz0z2OQ" name="newScript()" content="operationApproval.getApproval().equalsIgnoreCase(&quot;NO&quot;)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_XoTWMBaqEe-SNcJhz0z2OQ" name="operationApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.OperationalApproval"/>
+        </condition>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_-atsYBapEe-SNcJhz0z2OQ" target="__NU1EBapEe-SNcJhz0z2OQ" source="__SKr8BghEe-uwb7Z4_PPTg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_-atsYRapEe-SNcJhz0z2OQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_-atsYhapEe-SNcJhz0z2OQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_-y3tsBapEe-SNcJhz0z2OQ" target="__ZOVYBD-Ee-aot_1VWrtKg" source="__NU1EBapEe-SNcJhz0z2OQ" isDefault="true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_-y3tsRapEe-SNcJhz0z2OQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_-y3tshapEe-SNcJhz0z2OQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="__vE3QBapEe-SNcJhz0z2OQ" target="_7I6WwBD-Ee-aot_1VWrtKg" source="__NU1EBapEe-SNcJhz0z2OQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="__vFeUBapEe-SNcJhz0z2OQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="__vFeURapEe-SNcJhz0z2OQ" name="newScript()" content="cmApproval.getApproval().equalsIgnoreCase(&quot;NO&quot;)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_cHpPUBaqEe-SNcJhz0z2OQ" name="cmApproval" dataType="_wFklVBD-Ee-aot_1VWrtKg" className="com.proflaut.nso.model.CmApprovalForm"/>
+        </condition>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_QLOdgBEAEe-aot_1VWrtKg" name="sathish" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_QOOuMBEAEe-aot_1VWrtKg" name="rakesh"/>
@@ -2777,11 +2827,11 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_8_3b7RD_Ee-aot_1VWrtKg" type="3005" element="_8_3b4BD_Ee-aot_1VWrtKg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_8_3b7xD_Ee-aot_1VWrtKg" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8_3b7hD_Ee-aot_1VWrtKg" x="536" y="91" width="112" height="56"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8_3b7hD_Ee-aot_1VWrtKg" x="579" y="92" width="112" height="56"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_9UUo8BD_Ee-aot_1VWrtKg" type="3005" element="_9UUB4BD_Ee-aot_1VWrtKg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_9UUo8hD_Ee-aot_1VWrtKg" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UUo8RD_Ee-aot_1VWrtKg" x="723" y="104" width="100" height="50"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UUo8RD_Ee-aot_1VWrtKg" x="792" y="102" width="100" height="50"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_2SsrIxHBEe-o_eIHrcfjrQ" type="3005" element="_2SsEEBHBEe-o_eIHrcfjrQ" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_2SsrJRHBEe-o_eIHrcfjrQ" type="5005"/>
@@ -2797,11 +2847,17 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_iZVeeBNKEe-3hLox5G8l9A" type="3027" element="_iZOwwBNKEe-3hLox5G8l9A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_iZVeehNKEe-3hLox5G8l9A" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iZVeeRNKEe-3hLox5G8l9A" x="537" y="10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iZVeeRNKEe-3hLox5G8l9A" x="590" y="10"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_l8ETcBNMEe-3hLox5G8l9A" type="3027" element="_l8CeQBNMEe-3hLox5G8l9A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_l8ETchNMEe-3hLox5G8l9A" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l8ETcRNMEe-3hLox5G8l9A" x="713" y="12" width="120" height="60"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l8ETcRNMEe-3hLox5G8l9A" x="792" y="10" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_xQTgkBapEe-SNcJhz0z2OQ" type="3008" element="_xQREUBapEe-SNcJhz0z2OQ" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_xQUusBapEe-SNcJhz0z2OQ" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_xQUusRapEe-SNcJhz0z2OQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xQTgkRapEe-SNcJhz0z2OQ" x="497" y="97" width="43" height="43"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_wFklYxD-Ee-aot_1VWrtKg"/>
@@ -2835,17 +2891,13 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_Fa-cchD_Ee-aot_1VWrtKg" type="5005"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fa-ccRD_Ee-aot_1VWrtKg" x="878" y="101" width="120" height="60"/>
             </children>
-            <children xmi:type="notation:Shape" xmi:id="_TGTYcBEJEe-aot_1VWrtKg" type="3005" element="_TGSKUBEJEe-aot_1VWrtKg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
-              <children xmi:type="notation:DecorationNode" xmi:id="_TGTYchEJEe-aot_1VWrtKg" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGTYcREJEe-aot_1VWrtKg" x="328" y="108" width="100" height="50"/>
-            </children>
             <children xmi:type="notation:Shape" xmi:id="_mu-S4BNTEe-3hLox5G8l9A" type="3027" element="_mu9EwBNTEe-3hLox5G8l9A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_mu-S4hNTEe-3hLox5G8l9A" type="5017"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mu-S4RNTEe-3hLox5G8l9A" x="118" y="184"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_4L6D1hNTEe-3hLox5G8l9A" type="3027" element="_4L41sBNTEe-3hLox5G8l9A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_4L6q4BNTEe-3hLox5G8l9A" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4L6D1xNTEe-3hLox5G8l9A" x="333" y="180"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4L6D1xNTEe-3hLox5G8l9A" x="289" y="180"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_5Ue1cBNTEe-3hLox5G8l9A" type="3027" element="_5UcZMBNTEe-3hLox5G8l9A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_5UfcgBNTEe-3hLox5G8l9A" type="5017"/>
@@ -2858,6 +2910,16 @@
             <children xmi:type="notation:Shape" xmi:id="_sftbFxNWEe-3hLox5G8l9A" type="3027" element="_sfrl4BNWEe-3hLox5G8l9A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_sfuCIBNWEe-3hLox5G8l9A" type="5017"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sftbGBNWEe-3hLox5G8l9A" x="885" y="184"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="__NXRUBapEe-SNcJhz0z2OQ" type="3008" element="__NU1EBapEe-SNcJhz0z2OQ" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="__NX4YBapEe-SNcJhz0z2OQ" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="__NX4YRapEe-SNcJhz0z2OQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__NXRURapEe-SNcJhz0z2OQ" x="431" y="107" width="43" height="43"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="__SMhIBghEe-uwb7Z4_PPTg" type="3005" element="__SKr8BghEe-uwb7Z4_PPTg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="__SMhIhghEe-uwb7Z4_PPTg" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__SMhIRghEe-uwb7Z4_PPTg" x="289" y="106" width="100" height="50"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_y34UsRD-Ee-aot_1VWrtKg"/>
@@ -2914,13 +2976,6 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wFklbBD-Ee-aot_1VWrtKg" width="1250" height="250"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_wFklbRD-Ee-aot_1VWrtKg"/>
-    <edges xmi:type="notation:Connector" xmi:id="_xNt48BD-Ee-aot_1VWrtKg" type="4001" element="_xNtR6xD-Ee-aot_1VWrtKg" source="_8kiKzBD_Ee-aot_1VWrtKg" target="_8_3b7RD_Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_xNt48xD-Ee-aot_1VWrtKg" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_xNt49BD-Ee-aot_1VWrtKg" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_xNt48RD-Ee-aot_1VWrtKg" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xNt48hD-Ee-aot_1VWrtKg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    </edges>
     <edges xmi:type="notation:Connector" xmi:id="_yWwkphD-Ee-aot_1VWrtKg" type="4001" element="_yWwkoxD-Ee-aot_1VWrtKg" source="_8_3b7RD_Ee-aot_1VWrtKg" target="_9UUo8BD_Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_yWwkqRD-Ee-aot_1VWrtKg" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_yWwkqhD-Ee-aot_1VWrtKg" y="-10"/>
@@ -2968,7 +3023,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_G1bBNBD_Ee-aot_1VWrtKg" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_G1bBMRD_Ee-aot_1VWrtKg" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_G1bBMhD_Ee-aot_1VWrtKg" points="[0, -21, 225, -522]$[0, -40, 225, -541]$[-317, -40, -92, -541]$[-317, 491, -92, -10]$[-286, 491, -61, -10]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_G1bBMhD_Ee-aot_1VWrtKg" points="[0, -21, 225, -522]$[-317, -21, -92, -522]$[-317, 511, -92, 10]$[-286, 511, -61, 10]"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_ss6KxhD_Ee-aot_1VWrtKg" type="4001" element="_ss6KwxD_Ee-aot_1VWrtKg" source="_-xACUBD_Ee-aot_1VWrtKg" target="__DZZ4BD_Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_ss6KyRD_Ee-aot_1VWrtKg" type="6001">
@@ -2991,21 +3046,12 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_tl4aJBD_Ee-aot_1VWrtKg" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tl4aJRD_Ee-aot_1VWrtKg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_SiCNwhEJEe-aot_1VWrtKg" type="4001" element="_SiBmsBEJEe-aot_1VWrtKg" source="_7I6WzRD-Ee-aot_1VWrtKg" target="_TGTYcBEJEe-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_SiCNwhEJEe-aot_1VWrtKg" type="4001" element="_SiBmsBEJEe-aot_1VWrtKg" source="_7I6WzRD-Ee-aot_1VWrtKg" target="__SMhIBghEe-uwb7Z4_PPTg" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_SiC00BEJEe-aot_1VWrtKg" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_SiC00REJEe-aot_1VWrtKg" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_SiCNwxEJEe-aot_1VWrtKg" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SiCNxBEJEe-aot_1VWrtKg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_Svfa8BEJEe-aot_1VWrtKg" type="4001" element="_Svez4BEJEe-aot_1VWrtKg" source="_TGTYcBEJEe-aot_1VWrtKg" target="__ZO8cBD-Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Svfa8xEJEe-aot_1VWrtKg" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Svfa9BEJEe-aot_1VWrtKg" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_Svfa8REJEe-aot_1VWrtKg" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Svfa8hEJEe-aot_1VWrtKg" points="[0, -2, -122, 0]$[97, -1, -25, 1]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvhQIBEJEe-aot_1VWrtKg" id="(1.0,0.52)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvhQIREJEe-aot_1VWrtKg" id="(0.20833333333333334,0.5333333333333333)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_1g2XcBHBEe-o_eIHrcfjrQ" type="4001" element="_1g1wYBHBEe-o_eIHrcfjrQ" source="_wFklXxD-Ee-aot_1VWrtKg" target="_2SsrIxHBEe-o_eIHrcfjrQ" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_1g2XcxHBEe-o_eIHrcfjrQ" type="6001">
@@ -3057,7 +3103,7 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_mu_hAxNTEe-3hLox5G8l9A" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mu_hBBNTEe-3hLox5G8l9A" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_4L7R8xNTEe-3hLox5G8l9A" type="4001" element="_4L7R8BNTEe-3hLox5G8l9A" source="_TGTYcBEJEe-aot_1VWrtKg" target="_4L6D1hNTEe-3hLox5G8l9A" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_4L7R8xNTEe-3hLox5G8l9A" type="4001" element="_4L7R8BNTEe-3hLox5G8l9A" source="__SMhIBghEe-uwb7Z4_PPTg" target="_4L6D1hNTEe-3hLox5G8l9A" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_4L75ABNTEe-3hLox5G8l9A" type="6001">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4L75ARNTEe-3hLox5G8l9A" y="-10"/>
       </children>
@@ -3105,6 +3151,57 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_sfupMxNWEe-3hLox5G8l9A" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sfupNBNWEe-3hLox5G8l9A" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wdh_0BapEe-SNcJhz0z2OQ" type="4001" element="_wdgKoBapEe-SNcJhz0z2OQ" source="_8kiKzBD_Ee-aot_1VWrtKg" target="_xQTgkBapEe-SNcJhz0z2OQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wdjN8BapEe-SNcJhz0z2OQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wdjN8RapEe-SNcJhz0z2OQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wdh_0RapEe-SNcJhz0z2OQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wdh_0hapEe-SNcJhz0z2OQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wrp7YBapEe-SNcJhz0z2OQ" type="4001" element="_wrpUUBapEe-SNcJhz0z2OQ" source="_xQTgkBapEe-SNcJhz0z2OQ" target="_8_3b7RD_Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wrqicBapEe-SNcJhz0z2OQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wrqicRapEe-SNcJhz0z2OQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wrp7YRapEe-SNcJhz0z2OQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wrp7YhapEe-SNcJhz0z2OQ" points="[0, -4, -95, -2]$[39, -4, -56, -2]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wrs-sBapEe-SNcJhz0z2OQ" id="(1.0,0.5813953488372093)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_x_xOoBapEe-SNcJhz0z2OQ" type="4001" element="_x_lBYBapEe-SNcJhz0z2OQ" source="_xQTgkBapEe-SNcJhz0z2OQ" target="_2SsrIxHBEe-o_eIHrcfjrQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_x_xOoxapEe-SNcJhz0z2OQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_x_x1sBapEe-SNcJhz0z2OQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_x_xOoRapEe-SNcJhz0z2OQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_x_xOohapEe-SNcJhz0z2OQ" points="[-22, 18, 312, 0]$[-22, 38, 312, 20]$[-317, 38, 17, 20]$[-317, 24, 17, 6]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x_zq4BapEe-SNcJhz0z2OQ" id="(1.0,0.5813953488372093)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x_zq4RapEe-SNcJhz0z2OQ" id="(0.32,0.88)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_-auTcBapEe-SNcJhz0z2OQ" type="4001" element="_-atsYBapEe-SNcJhz0z2OQ" source="__SMhIBghEe-uwb7Z4_PPTg" target="__NXRUBapEe-SNcJhz0z2OQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-au6gBapEe-SNcJhz0z2OQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-au6gRapEe-SNcJhz0z2OQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_-auTcRapEe-SNcJhz0z2OQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-auTchapEe-SNcJhz0z2OQ" points="[0, -6, -51, 0]$[42, -7, -9, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-axWwBapEe-SNcJhz0z2OQ" id="(1.0,0.56)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-axWwRapEe-SNcJhz0z2OQ" id="(0.20930232558139536,0.4883720930232558)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_-y4UwBapEe-SNcJhz0z2OQ" type="4001" element="_-y3tsBapEe-SNcJhz0z2OQ" source="__NXRUBapEe-SNcJhz0z2OQ" target="__ZO8cBD-Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-y4UwxapEe-SNcJhz0z2OQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-y4UxBapEe-SNcJhz0z2OQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_-y4UwRapEe-SNcJhz0z2OQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-y4UwhapEe-SNcJhz0z2OQ" points="[0, -7, -62, -5]$[51, -7, -11, -5]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-y5i4BapEe-SNcJhz0z2OQ" id="(1.0,0.6511627906976745)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-y5i4RapEe-SNcJhz0z2OQ" id="(0.09166666666666666,0.55)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="__vUu4BapEe-SNcJhz0z2OQ" type="4001" element="__vE3QBapEe-SNcJhz0z2OQ" source="__NXRUBapEe-SNcJhz0z2OQ" target="_7I6WzRD-Ee-aot_1VWrtKg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="__vUu4xapEe-SNcJhz0z2OQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__vUu5BapEe-SNcJhz0z2OQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="__vUu4RapEe-SNcJhz0z2OQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__vUu4hapEe-SNcJhz0z2OQ" points="[-22, -29, 282, -6]$[-22, -87, 282, -64]$[-280, -87, 24, -64]$[-280, -30, 24, -7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__vWkEBapEe-SNcJhz0z2OQ" id="(1.0,0.6744186046511628)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__vWkERapEe-SNcJhz0z2OQ" id="(0.52,0.14)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
